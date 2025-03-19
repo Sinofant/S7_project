@@ -7,7 +7,7 @@
 1) Основные объекты продукта
 
 ><p align="center">
->   <img width="200px" src="Diagramma_1.png" alt="qr"/>
+>   <img width="800px" src="Diagramma_1.png" alt="qr"/>
 ></p>
 
 
