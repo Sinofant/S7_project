@@ -1,1 +1,0 @@
-salam allecum double
