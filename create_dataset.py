@@ -9,9 +9,11 @@ def create_passenger(number_of_flights):
     temp=[0 for i in range(total_flights-cancelled_flights)]+[1 for i in range(cancelled_flights)]
     random.shuffle(temp)
     is_cancel=random.choice(temp)
+    time_since_booking=random.randint(1,365)
     passenger={
         'total_flights': total_flights,
         'cancelled_flights': cancelled_flights,
+        'time_since_booking':time_since_booking,
         'season_cancelled': season,
         'cancel_label': is_cancel
     }
@@ -20,8 +22,8 @@ def create_passenger(number_of_flights):
 passengers=[create_passenger(number_of_flights) for i in range(number_of_passenger)]
 
 with open('dataset.txt', 'w+') as f:
-    f.write("total_flights,cancelled_flights,season_cancelled,cancel_label\n")
+    f.write("total_flights,cancelled_flights,time_since_booking,season_cancelled,cancel_label\n")
     for passenger in passengers:
-        data=f'{passenger["total_flights"]},{passenger["cancelled_flights"]},{passenger["season_cancelled"]},{passenger["cancel_label"]}\n'
+        data=f'{passenger["total_flights"]},{passenger["cancelled_flights"]},{passenger["time_since_booking"]},{passenger["season_cancelled"]},{passenger["cancel_label"]}\n'
 
         f.write(data)
