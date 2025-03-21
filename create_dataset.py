@@ -1,11 +1,11 @@
 import random
 number_of_flights=150 # Максимальное кол-во полетов у пассажира
-number_of_passenger= 200 # Общее кол-во пассажирова в датасете
+number_of_passenger= 2000 # Общее кол-во пассажирова в датасете
 
 def create_passenger(number_of_flights):
     total_flights=random.randint(2,number_of_flights)
     cancelled_flights= random.randint(0, total_flights  //10 )
-    season=["autumn","spring","summer","winter"][random.randint(0,3)]
+    season=random.randint(0,3)
     temp=[0 for i in range(total_flights-cancelled_flights)]+[1 for i in range(cancelled_flights)]
     random.shuffle(temp)
     is_cancel=random.choice(temp)
